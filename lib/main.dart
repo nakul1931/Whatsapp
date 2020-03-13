@@ -93,9 +93,27 @@ class homeScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text(
-                                  "CHATS",
-                                  style: childTextStyle,
+                                Container(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                        "CHATS",
+                                        style: childTextStyle,
+                                      ),
+                                      SizedBox(width: 5,),
+                                      CircleAvatar(
+                                        // minRadius: 10,
+                                        maxRadius: 10,
+                                        child: Text(
+                                          "4",
+                                          style: TextStyle(color: mainColor),
+                                        ),
+                                        backgroundColor: Colors.white,
+                                      )
+                                    ],
+                                  ),
                                 ),
                                 Text(
                                   "STORY",
