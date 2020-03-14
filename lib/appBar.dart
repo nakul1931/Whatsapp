@@ -1,3 +1,4 @@
+import 'package:Whatsapp/main.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -59,8 +60,9 @@ class appBar extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             GestureDetector(
-                              onTap: (){
-                                Navigator.pushNamed(context,'/home');
+                              onTap: () {
+                                Navigator.pushNamed(context, '/home');
+                                // Navigator.push(context, homeScreen)
                               },
                               child: Text(
                                 "CHATS",
