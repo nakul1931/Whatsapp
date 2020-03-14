@@ -1,10 +1,7 @@
+import 'package:Whatsapp/story.dart';
 import 'package:flutter/material.dart';
-
-const mainColor = Color(0xFF1B735D);
-const iconColor = Colors.white;
-const textStyle =
-    TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold);
-const childTextStyle = TextStyle(fontSize: 16, color: Colors.white);
+import 'constants.dart';
+import 'appBar.dart';
 
 void main() => runApp(Home());
 
@@ -12,17 +9,24 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/home': (context) => HomeScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/story': (context) => Story(),
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: mainColor,
           floatingActionButtonTheme: FloatingActionButtonThemeData(
               foregroundColor: mainColor, backgroundColor: mainColor)),
-      home: homeScreen(),
+      home:HomeScreen(),
     );
   }
 }
 
-class homeScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   // List<Widget> = [];
   // final list = List<Widget>.;
   @override
@@ -41,97 +45,8 @@ class homeScreen extends StatelessWidget {
             ),
           ),
           body: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Container(
-                width: 400,
-                height: 100,
-                color: mainColor,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(17.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "WhatsApp",
-                            style: textStyle,
-                          ),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.search,
-                                  color: iconColor,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(
-                                  Icons.arrow_drop_down_circle,
-                                  color: iconColor,
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.camera_alt,
-                            color: Colors.white,
-                          ),
-                          Container(
-                            width: 300,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Text(
-                                        "CHATS",
-                                        style: childTextStyle,
-                                      ),
-                                      SizedBox(width: 5,),
-                                      CircleAvatar(
-                                        // minRadius: 10,
-                                        maxRadius: 10,
-                                        child: Text(
-                                          "4",
-                                          style: TextStyle(color: mainColor),
-                                        ),
-                                        backgroundColor: Colors.white,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Text(
-                                  "STORY",
-                                  style: childTextStyle,
-                                ),
-                                Text(
-                                  "CALLS",
-                                  style: childTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              appBar(),
             ],
           ),
         ),
