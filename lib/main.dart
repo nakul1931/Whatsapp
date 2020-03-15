@@ -1,3 +1,4 @@
+import 'package:Whatsapp/chats.dart';
 import 'package:Whatsapp/story.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
           primaryColor: mainColor,
           floatingActionButtonTheme: FloatingActionButtonThemeData(
               foregroundColor: mainColor, backgroundColor: mainColor)),
-      home:HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
@@ -47,6 +48,7 @@ class HomeScreen extends StatelessWidget {
           body: Column(
             children: <Widget>[
               appBar(),
+              chatData(),
             ],
           ),
         ),
